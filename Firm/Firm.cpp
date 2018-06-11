@@ -17,7 +17,7 @@ void Firm::setCapacity(int cap)
     capacity = cap;
 }
 
-Firm::Firm(const char* nm, int cap)
+Firm::Firm(const char* nm, int cap): name(nullptr)
 {
     setName(nm);
     setCapacity(cap);
