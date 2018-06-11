@@ -2,11 +2,11 @@
 
 #include "Employee.h"
 
-void Employee::setPosition(const char* p)
+void Employee::setPosition(const char* p): ()
 {
     if(!p) p="";
     int sz = strlen(p) + 1;
-    if(!position) delete[] position;
+    delete[] position;
     position = new char[sz];
     strcpy(position, p);
 }
@@ -17,7 +17,7 @@ void Employee::setSalary(double s)
     salary=s;
 }
 
-Employee::Employee(const char* nm, const char* br, const char* pos, double sal): Person(nm, br)
+Employee::Employee(const char* nm, const char* br, const char* pos, double sal): position(nullptr), Person(nm, br)
 {
     setPosition(pos);
     setSalary(sal);
