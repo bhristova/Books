@@ -6,12 +6,12 @@ void Professor::setSubject(const char* subj)
 {
     if(!subj) subj="";
     int sz = strlen(subj) + 1;
-    if(!subject) delete[] subject;
+    delete[] subject;
     subject = new char[sz];
     strcpy(subject, subj);
 }
 
-Professor::Professor(const char* nm, const char* br, const char* subj): Person(nm,br)
+Professor::Professor(const char* nm, const char* br, const char* subj): subject(nullptr), Person(nm,br)
 {
     setSubject(subj);
     capacity=10;
