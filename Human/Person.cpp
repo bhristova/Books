@@ -16,7 +16,7 @@ void Person::setName(const char* nm)
 {
     if(!nm) nm="";
     int sz = strlen(nm) + 1;
-    if(!name) delete[] name;
+    delete[] name;
     name = new char[sz];
     strcpy(name,nm);
 }
@@ -27,7 +27,7 @@ void Person::setBirth(const char* br)
     strcpy(birth, br);
 }
 
-Person::Person(const char* nm, const char* br)
+Person::Person(const char* nm, const char* br): name(nullptr)
 {
     setName(nm);
     setBirth(br);
